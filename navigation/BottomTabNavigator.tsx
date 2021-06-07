@@ -3,7 +3,7 @@
  * https://reactnavigation.org/docs/bottom-tab-navigator
  */
 
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, MaterialIcons   } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
@@ -71,7 +71,12 @@ function TabTwoNavigator() {
       <TabTwoStack.Screen
         name="TabTwoScreen"
         component={TabTwoScreen}
-        options={{ headerTitle: 'Tab Two Title' }}
+        options={{
+            headerTitle: 'Messenger',
+            headerStyle:{backgroundColor: "#3798FA"},
+            headerTintColor:"white",
+            headerRight: () => <MaterialIcons  name="menu" size={30} color="rgba(255, 255, 255, 0.69)" style={{marginRight: 10}}/>
+        }}
       />
     </TabTwoStack.Navigator>
   );
