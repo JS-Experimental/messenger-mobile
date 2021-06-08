@@ -11,8 +11,18 @@ import { HTTP } from '@metall/common1';
 import { Platform } from 'react-native';
 
 export default function App() {
-  const apiUrl = Platform.OS === 'web' ? 'http://localhost:4000/api' : 'http://192.168.100.7:4000/api';
+
+  let apiUrl;
+
+  if(__DEV__) {
+    apiUrl = Platform.OS === 'web' ? 'http://localhost:4000/api' : 'http://192.168.241.57:4000/api';
+  }else {
+    apiUrl = 'https://messenger-web-api.herokuapp.com/api';
+  }
+
   HTTP.createClient(apiUrl);
+
+  console.log('dev: ',__DEV__);
 
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
