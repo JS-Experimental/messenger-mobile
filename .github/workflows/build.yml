@@ -25,6 +25,8 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Install turtle cli
+        env:
+         NPM_CONFIG_PREFIX: "~/.npm-global"
         run: npm install -g turtle-cli
         
       - name: Build
