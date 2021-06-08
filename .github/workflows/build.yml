@@ -25,7 +25,10 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Install turtle cli
-        run: npm install -g turtle-cli --unsafe-perm
+        run: sudo npm install -g turtle-cli
+        
+      - name: Turtle setup
+        run: turtle setup:android
         
       - name: Build
         run: turtle build:android
